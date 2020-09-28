@@ -1,8 +1,8 @@
 {
-  "name": "el-admin",
+  "name": "a-idea-doc",
   "version": "2.5.0",
-  "description": "EL-ADMIN 开发文档",
-  "author": "Zheng Jie",
+  "description": "A-IDEA-DOC 博客",
+  "author": "Tang Zheng Feng",
   "license": "Apache-2.0",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
