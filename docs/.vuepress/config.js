@@ -89,7 +89,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '/guide/gxdm',
-                        '/guide/bqsm'
+                        '/guide/bqsm',
+                        '/guide/lotteryCalculator'
                     ]
                 },
                 {
