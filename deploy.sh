@@ -9,6 +9,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:jiangnanya/idea-doc.github.io.git master
+git push -f git@github.com:jiangnanya/a-idea-doc.git master:gh-pages
 
 cd -

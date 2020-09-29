@@ -1,3 +1,4 @@
+base: '/a-idea-doc/'
 module.exports = {
     // 插件
     plugins: {
