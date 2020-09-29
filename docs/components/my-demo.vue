@@ -1,7 +1,3 @@
-# V 0.1 版本
-
-0.1 版本更新内容如下
-
 <template>
     <div>
         <button @click="change">{{buttonName}}</button>
@@ -12,7 +8,7 @@
     export default {
         data() {
             return {
-                buttonName: "更新"
+                buttonName: "点击按钮"
             };
         },
         methods: {
@@ -22,4 +18,3 @@
         }
     };
  </script>
-

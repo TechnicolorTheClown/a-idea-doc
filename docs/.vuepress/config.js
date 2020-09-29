@@ -77,6 +77,14 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '脚本',
+                    collapsable: false,
+                    children: [
+                        '/guide/12306',
+                        '/guide/JD'
+                    ]
+                },
+                {
                     title: '其它',
                     collapsable: false,
                     children: [
@@ -118,4 +126,3 @@ module.exports = {
         editLinkText: '错误反馈！'
     }
 }
-
