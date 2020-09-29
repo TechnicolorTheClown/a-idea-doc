@@ -1,6 +1,6 @@
-base: '/a-idea-doc/'
 module.exports = {
     // 插件
+    base: '/a-idea-doc/',
     plugins: {
         '@vuepress/back-to-top': {}
     },
