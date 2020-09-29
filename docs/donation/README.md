@@ -3,4 +3,4 @@
 
 |   微信  |   支付宝  |
 |--- | --- |
-|  ![wx.png](/logo/wx.png)   |  ![zfb.png](/logo/zfb.png)  |
+|  ![wx.png](/a-idea-doc/logo/wx.png)   |  ![zfb.png](/a-idea-doc/logo/zfb.png)  |
