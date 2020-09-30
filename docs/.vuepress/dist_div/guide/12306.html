@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>12306抢票（python） | a-idea-doc</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="icon" href="/a-idea-doc/logo/small.png">
+    <meta name="description" content="在一个崇高的目的支持下，不停地学习，即使慢、也一定会获得成功">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/a-idea-doc/assets/css/0.styles.74814926.css" as="style"><link rel="preload" href="/a-idea-doc/assets/js/app.93546922.js" as="script"><link rel="preload" href="/a-idea-doc/assets/js/3.f8478df7.js" as="script"><link rel="preload" href="/a-idea-doc/assets/js/1.7ce1a8d5.js" as="script"><link rel="preload" href="/a-idea-doc/assets/js/13.f9ea66ba.js" as="script"><link rel="prefetch" href="/a-idea-doc/assets/js/10.aea707a1.js"><link rel="prefetch" href="/a-idea-doc/assets/js/11.a4a42c22.js"><link rel="prefetch" href="/a-idea-doc/assets/js/12.1e2c25cc.js"><link rel="prefetch" href="/a-idea-doc/assets/js/14.cc1a80c6.js"><link rel="prefetch" href="/a-idea-doc/assets/js/15.8effb4c7.js"><link rel="prefetch" href="/a-idea-doc/assets/js/16.172a5c76.js"><link rel="prefetch" href="/a-idea-doc/assets/js/17.dc1b69ee.js"><link rel="prefetch" href="/a-idea-doc/assets/js/18.2f56a863.js"><link rel="prefetch" href="/a-idea-doc/assets/js/19.6649f53b.js"><link rel="prefetch" href="/a-idea-doc/assets/js/20.f04ae4d8.js"><link rel="prefetch" href="/a-idea-doc/assets/js/21.d65779aa.js"><link rel="prefetch" href="/a-idea-doc/assets/js/22.cadebf28.js"><link rel="prefetch" href="/a-idea-doc/assets/js/23.3db579cb.js"><link rel="prefetch" href="/a-idea-doc/assets/js/24.e4e8a29d.js"><link rel="prefetch" href="/a-idea-doc/assets/js/25.3de34baa.js"><link rel="prefetch" href="/a-idea-doc/assets/js/26.31712357.js"><link rel="prefetch" href="/a-idea-doc/assets/js/27.cfe34759.js"><link rel="prefetch" href="/a-idea-doc/assets/js/28.b311b28d.js"><link rel="prefetch" href="/a-idea-doc/assets/js/29.99541a37.js"><link rel="prefetch" href="/a-idea-doc/assets/js/30.e30a2625.js"><link rel="prefetch" href="/a-idea-doc/assets/js/31.7a5bf0c0.js"><link rel="prefetch" href="/a-idea-doc/assets/js/4.1e6c67f8.js"><link rel="prefetch" href="/a-idea-doc/assets/js/5.5ee9e71e.js"><link rel="prefetch" href="/a-idea-doc/assets/js/6.178474b0.js"><link rel="prefetch" href="/a-idea-doc/assets/js/7.d7359a44.js"><link rel="prefetch" href="/a-idea-doc/assets/js/8.74162e68.js"><link rel="prefetch" href="/a-idea-doc/assets/js/9.dff5f756.js">
+    <link rel="stylesheet" href="/a-idea-doc/assets/css/0.styles.74814926.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>a-idea-doc</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Tang Zheng Feng</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/a-idea-doc/" class="home-link router-link-active"><img src="/a-idea-doc/logo/small.png" alt="a-idea-doc" class="logo"> <span class="site-name">a-idea-doc</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/a-idea-doc/guide/" class="nav-link router-link-active"><i class="iconfont reco-document"></i>
+  项目指南
+</a></div><div class="nav-item"><a href="/a-idea-doc/problem/" class="nav-link"><i class="iconfont reco-faq"></i>
+  常见问题
+</a></div><div class="nav-item"><a href="/a-idea-doc/version/V0.1/" class="nav-link"><i class="iconfont reco-date"></i>
+  更新日志
+</a></div><div class="nav-item"><a href="/a-idea-doc/donation/" class="nav-link"><i class="iconfont reco-account"></i>
+  捐赠支持
+</a></div><div class="nav-item"><a href="https://" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-other"></i>
+  体验地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-github"></i>
+      源码地址
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TechnicolorTheClown/idea-doc" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  Github源码
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://xxxxx" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  Gitee源码
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><!----> <h3 class="name" data-v-ca798c94>
+    Tang Zheng Feng
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>0</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>0</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/a-idea-doc/guide/" class="nav-link router-link-active"><i class="iconfont reco-document"></i>
+  项目指南
+</a></div><div class="nav-item"><a href="/a-idea-doc/problem/" class="nav-link"><i class="iconfont reco-faq"></i>
+  常见问题
+</a></div><div class="nav-item"><a href="/a-idea-doc/version/V0.1/" class="nav-link"><i class="iconfont reco-date"></i>
+  更新日志
+</a></div><div class="nav-item"><a href="/a-idea-doc/donation/" class="nav-link"><i class="iconfont reco-account"></i>
+  捐赠支持
+</a></div><div class="nav-item"><a href="https://" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-other"></i>
+  体验地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-github"></i>
+      源码地址
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TechnicolorTheClown/idea-doc" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  Github源码
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://xxxxx" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  Gitee源码
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>a-idea-doc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/" aria-current="page" class="sidebar-link">项目介绍</a></li><li><a href="/a-idea-doc/guide/kslj.html" class="sidebar-link">快速了解</a></li><li><a href="/a-idea-doc/guide/ksks.html" class="sidebar-link">快速开始</a></li><li><a href="/a-idea-doc/guide/qdsc.html" class="sidebar-link">使用手册</a></li><li><a href="/a-idea-doc/guide/xmbs.html" class="sidebar-link">部署项目</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JAVA</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/JAVAREADME.html" class="sidebar-link">JAVA介绍</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>MySQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/MySQLREADME.html" class="sidebar-link">MySQL介绍</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>脚本</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/12306.html" aria-current="page" class="active sidebar-link">12306抢票（python）</a></li><li><a href="/a-idea-doc/guide/JD.html" class="sidebar-link">京东准点秒杀脚本</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其它</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/csdn.html" class="sidebar-link">CSDN爬取文章</a></li><li><a href="/a-idea-doc/guide/gxdm.html" class="sidebar-link">贡献代码</a></li><li><a href="/a-idea-doc/guide/bqsm.html" class="sidebar-link">版权说明</a></li><li><a href="/a-idea-doc/guide/lotteryCalculator.html" class="sidebar-link">彩票计算器</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>鸣谢</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/a-idea-doc/guide/mx.html" class="sidebar-link">特别鸣谢</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e></h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Tang Zheng Feng</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">12306抢票（python）</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>Tang Zheng Feng</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="_12306抢票-python"><a href="#_12306抢票-python" class="header-anchor">#</a> 12306抢票（python）</h1> <center><h1>12306抢票（python）</h1></center> <h1 id="github标星5k的-py12306"><a href="#github标星5k的-py12306" class="header-anchor">#</a> GitHub标星5k的“<strong>py12306</strong>”</h1> <p>源码地址：GitHub ：</p> <p>我同步了一版本在码云上 拉下来速度可以快点</p> <ul><li>[x] 多日期查询余票 - [x] 自动打码下单 - [x] 用户状态恢复 - [x] 电话语音通知 - [x] 多账号、多任务、多线程支持 - [x] 单个任务多站点查询  - [x] 分布式运行 - [x] Docker 支持 - [x] 动态修改配置文件 - [x] 邮件通知 - [x] Web 管理页面 - [x] 微信消息通知 - [ ] 代理池支持 (<a href="https://github.com/pjialin/pyproxy-async" target="_blank" rel="noopener noreferrer">pyproxy-async<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>)</li></ul> <h2 id="成功图片展示"><a href="#成功图片展示" class="header-anchor">#</a> 成功图片展示</h2> <img alt="" height="280" src="https://img-blog.csdnimg.cn/20191225171814700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <img alt="" height="313" src="https://img-blog.csdnimg.cn/20191225171933876.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <img alt="" height="277" src="https://img-blog.csdnimg.cn/20191225172008180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <p><img alt="" height="373" src="https://img-blog.csdnimg.cn/20191225172127656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"><img alt="" height="310" src="https://img-blog.csdnimg.cn/201912251722057.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"></p> <h2 id="抢到后-去12306官网付款"><a href="#抢到后-去12306官网付款" class="header-anchor">#</a> 抢到后 去12306官网付款</h2> <img alt="" height="442" src="https://img-blog.csdnimg.cn/20191225172522339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <p></p> <p></p> <h2 id="进入主题"><a href="#进入主题" class="header-anchor">#</a> 进入主题</h2> <p>py12306 需要运行在 python 3.6 以上版本（其它版本暂未测试)</p> <h3 id="_1-安装依赖"><a href="#_1-安装依赖" class="header-anchor">#</a> <strong>1. 安装依赖</strong></h3> <div class="language- extra-class"><pre class="language-text"><code>git clone https://github.com/pjialin/py12306
+
+pip install -r requirements.txt
+</code></pre></div><img alt="" height="364" src="https://img-blog.csdnimg.cn/20191225174134981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="575" class="has"> <h3 id="_2-配置程序"><a href="#_2-配置程序" class="header-anchor">#</a> <strong>2. 配置程序</strong></h3> <div class="language- extra-class"><pre class="language-text"><code>cp env.py.example env.py
+</code></pre></div><img alt="" height="375" src="https://img-blog.csdnimg.cn/20191225173538734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="589" class="has"> <h3 id="_3-打开env-py配置抢票信息"><a href="#_3-打开env-py配置抢票信息" class="header-anchor">#</a> 3.打开env.py配置抢票信息</h3> <img alt="" height="472" src="https://img-blog.csdnimg.cn/20191225174302808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <div class="language- extra-class"><pre class="language-text"><code># -*- coding: utf-8 -*-
+
+# 12306 账号
+USER_ACCOUNTS = [
+    # 目前已支持仅查询，不下单，屏蔽掉下面的账号即可
+    {
+        'key': 0,  # 如使用多个账号 key 不能重复
+        'user_name': 'your user name',# 登录12306 账号
+        'password': 'your password'# 登录12306 密码
+    },
+    # {
+    #     'key': 'wangwu',
+    #     'user_name': 'wangwu@qq.com',
+    #     'password': 'wangwu'
+    # }
+]
+
+# 查询间隔(指每一个任务中每一个日期的间隔 / 单位秒)
+# 默认取间隔/2 到 间隔之间的随机数 如设置为 1 间隔则为 0.5 ~ 1 之间的随机数
+# 接受字典形式 格式:    {'min': 0.5, 'max': 1}
+QUERY_INTERVAL = 1
+
+# 用户心跳检测间隔 格式同上
+USER_HEARTBEAT_INTERVAL = 120
+
+# 多线程查询
+QUERY_JOB_THREAD_ENABLED = 0  # 是否开启多线程查询，开启后第个任务会单独分配线程处理
+
+# 打码平台账号
+# 目前只支持免费打码接口 和 若快打码，注册地址：http://www.ruokuai.com/login
+AUTO_CODE_PLATFORM = 'free'  # 免费填写 free 若快 ruokuai  # 免费打码无法保证持续可用，如失效请手动切换
+AUTO_CODE_ACCOUNT = {  # 使用 free 可用省略
+    'user': 'your user name',
+    'pwd': 'your password'
+}
+
+# 语音验证码 
+# 可以在上面买个0元五条语音短信的就可以了  
+# 只要一个 code 参数 配置到NOTIFICATION_API_APP_CODE，再改个接收手机号(一般购买后几分钟左右会有封邮件，从邮件进去就可以看到)
+# 没找到比较好用的，现在用的这个是阿里云 API 市场上的，基本满足要求，价格也便宜
+# 购买成功后到控制台找到  APPCODE 放在下面就可以了
+# 地址：易源 https://market.aliyun.com/products/57126001/cmapi019902.html
+# 2019-01-18 更新
+# 增加新的服务商 鼎信 https://market.aliyun.com/products/56928004/cmapi026600.html?spm=5176.2020520132.101.2.e27e7218KQttQS
+NOTIFICATION_BY_VOICE_CODE = 1  # 开启语音通知
+NOTIFICATION_VOICE_CODE_TYPE = 'dingxin'  # 语音验证码服务商  可用项 dingxin  yiyuan
+NOTIFICATION_API_APP_CODE = '' # 需要配置code 
+NOTIFICATION_VOICE_CODE_PHONE = ''  # 接受通知的手机号
+
+# 钉钉通知
+# 使用说明   https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&amp;amp;articleId=105735&amp;amp;docType=1
+DINGTALK_ENABLED = 0
+DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send?access_token=your token'
+
+# Telegram消息推送
+# 目前共有两个Bot：
+#   1：https://t.me/notificationme_bot
+#   2：https://t.me/RE_Link_Push_bot
+# 任选一个Bot，关注获取URL链接，如果没有回复则发送给Bot这条信息: /start
+# 将获取的URL填入下面对应位置
+# 注意：因为以上Bot都由他人公益提供，无法保证随时可用，如以上Bot都无法使用，请使用其他消息推送方式
+# Bot1来源：https://github.com/Fndroid/tg_push_bot
+# Bot2来源：https://szc.me/post/2.html
+TELEGRAM_ENABLED = 0
+TELEGRAM_BOT_API_URL = 'https://tgbot.lbyczf.com/sendMessage/:your_token'
+
+# ServerChan 和 PushBear 微信消息推送
+# 使用说明
+# ServerChan     http://sc.ftqq.com
+# PushBear       http://pushbear.ftqq.com
+SERVERCHAN_ENABLED = 0
+SERVERCHAN_KEY = ''
+PUSHBEAR_ENABLED = 0
+PUSHBEAR_KEY = ''
+
+# Bark 推送到ios设备
+# 参考 https://www.v2ex.com/t/467407
+BARK_ENABLED = 0
+BARK_PUSH_URL = 'https://api.day.app/:your_token'
+
+# 输出日志到文件
+OUT_PUT_LOG_TO_FILE_ENABLED = 0
+OUT_PUT_LOG_TO_FILE_PATH = 'runtime/12306.log'  # 日志目录
+
+# 分布式集群配置
+CLUSTER_ENABLED = 0  # 集群状态
+NODE_IS_MASTER = 1  # 是否是主节点 同时只能启用 1 个主节点
+NODE_SLAVE_CAN_BE_MASTER = 1  # 主节点宕机后，子节点是否可以自动提升为主节点(建议打开)
+NODE_NAME = 'master'  # 节点名称，不能重复
+REDIS_HOST = 'localhost'  # Redis  host
+REDIS_PORT = '6379'  # Redis  port
+REDIS_PASSWORD = ''  # Redis  密码 没有可以留空
+
+# 邮箱配置
+EMAIL_ENABLED = 0  # 是否开启邮件通知
+EMAIL_SENDER = 'sender@example.com'  # 邮件发送者
+EMAIL_RECEIVER = 'receiver@example.com'  # 邮件接受者 # 可以多个 [email1@gmail.com, email2@gmail.com]
+EMAIL_SERVER_HOST = 'localhost'  # 邮件服务 host
+EMAIL_SERVER_USER = ''  # 邮件服务登录用户名
+EMAIL_SERVER_PASSWORD = ''  # 邮件服务登录密码
+
+# Web 管理
+WEB_ENABLE = 1  # 是否打开 Web 管理
+WEB_USER = {  # 登录信息
+    'username': 'admin',
+    'password': 'password'
+}
+WEB_PORT = 8008  # 监听端口
+
+# 是否开启 CDN 查询
+CDN_ENABLED = 0
+CDN_CHECK_TIME_OUT = 1 # 检测单个 cdn 是否可用超时时间
+
+# 查询任务
+QUERY_JOBS = [
+    {
+        # 'job_name':  'bj -&amp;gt; sz',  # 任务名称，不填默认会以车站名命名，不可重复
+        'account_key': 0,  # 将会使用指定账号下单
+        'left_dates': [  # 出发日期 :Array
+            &quot;2020-01-23&quot;,
+            &quot;2020-01-24&quot;,
+        ],
+        'stations': {  # 车站 支持多个车站同时查询  :Dict or :List
+            'left': '北京',
+            'arrive': '深圳',
+        },
+        #  # 多个车站示例  (建议添加多个，有时多买几站成功率会高一点)
+        # 'stations': [{
+        #     'left': '北京',
+        #     'arrive': '深圳',
+        # },{  # 多个车站示例
+        #     'left': '北京',
+        #     'arrive': '广州',
+        # }],
+        'members': [  # 乘客姓名，会根据当前账号自动识别乘客类型 购买儿童票 设置两个相同的姓名即可，程序会自动识别 如  ['张三', '张三']
+            &quot;张三&quot;,
+            #&quot;*王五&quot;, #在姓名前加*表示学生购买成人票
+            # 7,  # 支持通过序号确定唯一乘客，序号查看可通过  python main.py -t 登录成功之后在 runtime/user/ 下找到对应的 用户名_passengers.json 文件，找到对应的 code 填入
+        ],
+        'allow_less_member': 0,  # 是否允许余票不足时提交部分乘客
+        'seats': [  # 筛选座位  有先后顺序 :Array
+            # 可用值: 特等座, 商务座, 一等座, 二等座, 软卧, 硬卧, 动卧, 软座, 硬座, 无座
+            '硬卧',
+            '硬座'
+        ],
+        'train_numbers': [  # 筛选车次 可以为空，为空则所有车次都可以提交 如 [] 注意大小写需要保持一致
+            &quot;K356&quot;,
+            &quot;K1172&quot;,
+            &quot;K4184&quot;
+        ],
+        'except_train_numbers': [  # 筛选车次，排除车次  train_numbers 和 except_train_numbers 不可同时存在
+        ],
+        'period': {  # 筛选时间
+            'from': '00:00',
+            'to': '24:00'
+        }
+
+    },
+    # {
+    #     'job_name':  'cd -&amp;gt; gz',  # 任务名称，不填默认会以车站名命名，不可重复
+    #     'account_key': 0,  # 将会使用指定账号下单
+    #     'left_dates': [
+    #         &quot;2020-01-23&quot;,
+    #         &quot;2020-01-24&quot;
+    #     ],
+    #     'stations': {
+    #         'left': '成都',
+    #         'arrive': '广州',
+    #     },
+    #     'members': [
+    #         &quot;小王&quot;,
+    #     ],
+    #     'allow_less_member': 0,
+    #     'seats': [
+    #         '硬卧',
+    #     ],
+    #     'train_numbers': []
+    # }
+]
+
+</code></pre></div><h3 id="_4-开始测试"><a href="#_4-开始测试" class="header-anchor">#</a> 4.开始测试</h3> <div class="language- extra-class"><pre class="language-text"><code>python main.py -t
+</code></pre></div><img alt="" height="374" src="https://img-blog.csdnimg.cn/2019122517525560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="579" class="has"> <h3 id="_5-运行程序"><a href="#_5-运行程序" class="header-anchor">#</a> <strong>5.运行程序</strong></h3> <div class="language- extra-class"><pre class="language-text"><code>python main.py
+</code></pre></div><p>浏览器访问： （文件env.py里WEB_PORT 监听端口设置）</p> <img alt="" height="511" src="https://img-blog.csdnimg.cn/201912251756060.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="824" class="has"> <p>账号密码 （文件env.py里 WEB_USER 里 设置,默认 登录账号：admin 登录密码：password）</p> <div class="language- extra-class"><pre class="language-text"><code>username 登录账号
+password 登录密码
+</code></pre></div><img alt="" height="297" src="https://img-blog.csdnimg.cn/2019122518011586.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <h2 id="常见错误异常"><a href="#常见错误异常" class="header-anchor">#</a> 常见错误异常</h2> <h3 id="日志输出地址未配置"><a href="#日志输出地址未配置" class="header-anchor">#</a> 日志输出地址未配置</h3> <img alt="" height="319" src="https://img-blog.csdnimg.cn/20191225180307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <p>env.py 配置输出日志地址</p> <div class="language- extra-class"><pre class="language-text"><code># 输出日志到文件
+OUT_PUT_LOG_TO_FILE_ENABLED = 1 # 1.开启 0.关闭
+OUT_PUT_LOG_TO_FILE_PATH = 'C:/Users/admin/Desktop/抢票/py12306/runtime/12306.log' #输出地址
+</code></pre></div><h3 id="_12306登录信息未配置"><a href="#_12306登录信息未配置" class="header-anchor">#</a> 12306登录信息未配置</h3> <img alt="" height="567" src="https://img-blog.csdnimg.cn/2019122518215412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Rhbmdjdg==,size_16,color_FFFFFF,t_70" width="800" class="has"> <div class="language- extra-class"><pre class="language-text"><code>env.py 配置登录12306地址 
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># 12306 账号
+USER_ACCOUNTS = [
+    # 目前已支持仅查询，不下单，屏蔽掉下面的账号即可
+    {
+        'key': 0,  # 如使用多个账号 key 不能重复
+        'user_name': 'your user name', #登录12306账号
+        'password': 'your password' # 登录12306密码
+    }
+]
+</code></pre></div><p></p></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/TechnicolorTheClown/idea-doc/edit/master/docs/guide/12306.md" target="_blank" rel="noopener noreferrer">错误反馈！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间: </span> <span class="time">9/29/2020, 3:54:28 PM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/a-idea-doc/assets/js/app.93546922.js" defer></script><script src="/a-idea-doc/assets/js/3.f8478df7.js" defer></script><script src="/a-idea-doc/assets/js/1.7ce1a8d5.js" defer></script><script src="/a-idea-doc/assets/js/13.f9ea66ba.js" defer></script>
+  </body>
+</html>
