@@ -99,6 +99,7 @@ module.exports = {
                     title: '其它',
                     collapsable: false,
                     children: [
+                        '/guide/csdn',
                         '/guide/gxdm',
                         '/guide/bqsm'
                     ]
