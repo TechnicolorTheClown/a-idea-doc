@@ -3,7 +3,7 @@
 <center>
 <template>
     <div>
-    <input type="text" class="el-input__inner" id="num4" width="50px" placeholder="单注金额" value="2" /><br/><br/>
+     <input type="text" class="el-input__inner" id="num00" width="50px" placeholder="单注金额" value="2" /><br/><br/>
     <input type="text" class="el-input__inner" id="num" width="50px" placeholder="起始倍数" value="1" /><br/><br/>
     <input type="text" class="el-input__inner" id="num0" width="50px" placeholder="已投入"value="0" /><br/><br/>
     <input type="text" class="el-input__inner" id="num1" width="50px" placeholder="奖金" /><br/><br/>
@@ -27,7 +27,7 @@
                  t: '',
                  m: '',
                  b: '',
-                 note:'',
+                 note: 2,
                 result: [{ /*message: '',*/
                            次数: '',
                            倍: '',
@@ -37,26 +37,26 @@
         },
         methods: {
             change() {
-            this.i = 1,            
-            this.note= '',
+            this.i = 1,
             this.play= '',
             this.lr = '',
             this.t = '',
             this.m = '',
             this.b = '',
+            this.note = 2,
             this.result = [{次数: '',
                             倍: '',
                             消费: '',
                             利润: ''}],
-            this.note= parseFloat(document.getElementById("num4").value);
+            this.note= parseFloat(document.getElementById("num00").value);
             this.play= parseFloat(document.getElementById("num1").value);
             this.lr= parseFloat(document.getElementById("num2").value);
             this.t= parseFloat(document.getElementById("num3").value);
             this.m = parseFloat(document.getElementById("num0").value);
             this.b = parseFloat(document.getElementById("num").value);
             for(; this.b < this.t; this.b++){
-                for (; this.lr < this.b * this.play - (this.m + this.b * note); this.i++) {
-                    this.m += this.b * note;
+                for (; this.lr < this.b * this.play - (this.m + this.b * 2); this.i++) {
+                    this.m += this.b * 2;
                     this.result.push({
                         /*message: "次数 >> " + this.i + "   倍 >> "  + this.b + "   消费 >> " + this.m + "  利润 >> " + (this.b * this.play-this.m),*/
                         次数: "次数 : " + this.i,
