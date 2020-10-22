@@ -85,13 +85,32 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '彩票',
+                    collapsable: false,
+                    children: [
+                        '/guide/lottery',
+                        '/guide/ChoiPang',
+                        '/guide/ChoiPangMissing',
+                        '/guide/definiteCowData',
+                        '/guide/definiteCowMissing'
+                    ]
+                },
+                {
+                    title: '游戏',
+                    collapsable: false,
+                    children: [
+                        '/guide/2048',
+                        '/guide/soduku',
+                        '/guide/snake',
+                        '/guide/mine'
+                    ]
+                },
+                {
                     title: '其它',
                     collapsable: false,
                     children: [
-                        '/guide/csdn',
                         '/guide/gxdm',
-                        '/guide/bqsm',
-                        '/guide/lotteryCalculator'
+                        '/guide/bqsm'
                     ]
                 },
                 {

@@ -14,6 +14,7 @@
     <body style="background-repeat: no-repeat;margin-left: 10px;">
         <p>
             <h1>简易计算器</h1>
+            <input type="text" id="num-1" width="50px" placeholder="单注金额" value="2" /><br/>
             <input type="text" id="num" width="50px" placeholder="起始倍数" value="1" /><br/>
             <input type="text" id="num0" width="50px" placeholder="已投入"value="0" /><br/>
             <input type="text" id="num1" width="50px" placeholder="奖金" /><br/>
@@ -26,6 +27,7 @@
     </body>
     <script type="text/javascript">
         function cal(){
+            var note= parseFloat(document.getElementById("num-1").value);
             var play= parseFloat(document.getElementById("num1").value);
             var lr= parseFloat(document.getElementById("num2").value);
             var t= parseFloat(document.getElementById("num3").value);
@@ -34,13 +36,13 @@
             var spanValue = "";
             var i = 1;
             for(; b < t; b++){
-                for (; lr < b * play - (m + b * 2); i++) {
-                    m += b * 2;
+                for (; lr < b * play - (m + b * note); i++) {
+                    m += b * note;
                     spanValue = spanValue + "次数>" + i + "倍>"  + b + "消费>" + m + "利润>" + (b * play-m);      
                 }
                 document.getElementById("result").innerText=spanValue;
             }            
-        }
+        } 
     </script>
     </html>
 
