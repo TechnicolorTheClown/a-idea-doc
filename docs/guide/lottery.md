@@ -3,7 +3,7 @@
 <center>
 <template>
     <div>
-    <input type="text" class="el-input__inner" id="num-1" width="50px" placeholder="单注金额" value="2" /><br/><br/>
+    <input type="text" class="el-input__inner" id="num4" width="50px" placeholder="单注金额" value="2" /><br/><br/>
     <input type="text" class="el-input__inner" id="num" width="50px" placeholder="起始倍数" value="1" /><br/><br/>
     <input type="text" class="el-input__inner" id="num0" width="50px" placeholder="已投入"value="0" /><br/><br/>
     <input type="text" class="el-input__inner" id="num1" width="50px" placeholder="奖金" /><br/><br/>
@@ -27,6 +27,7 @@
                  t: '',
                  m: '',
                  b: '',
+                 note:'',
                 result: [{ /*message: '',*/
                            次数: '',
                            倍: '',
@@ -47,7 +48,7 @@
                             倍: '',
                             消费: '',
                             利润: ''}],
-            this.note= parseFloat(document.getElementById("num-1").value);
+            this.note= parseFloat(document.getElementById("num4").value);
             this.play= parseFloat(document.getElementById("num1").value);
             this.lr= parseFloat(document.getElementById("num2").value);
             this.t= parseFloat(document.getElementById("num3").value);
