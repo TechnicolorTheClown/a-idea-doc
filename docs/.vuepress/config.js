@@ -43,7 +43,7 @@ module.exports = {
                     },
                     {
                         text: 'Gitee源码',
-                        link: 'https://xxxxx'
+                        link: '/guide/lottery'
                     },
                 ],
                 icon: 'reco-github'
@@ -84,21 +84,22 @@ module.exports = {
                         '/guide/JD'
                     ]
                 },
-                {
-                    title: '彩票',
-                    collapsable: false,
-                    children: [
-                        '/guide/lottery',
-                        '/guide/ChoiPang',
-                        '/guide/ChoiPangMissing',
-                        '/guide/definiteCowData',
-                        '/guide/definiteCowMissing'
-                    ]
-                },
+                // {
+                //     title: '彩票',
+                //     collapsable: false,
+                //     children: [
+                //         '/guide/lottery',
+                //         '/guide/ChoiPang',
+                //         '/guide/ChoiPangMissing',
+                //         '/guide/definiteCowData',
+                //         '/guide/definiteCowMissing'
+                //     ]
+                // },
                 {
                     title: '游戏',
                     collapsable: false,
                     children: [
+                        '/guide/gobang',
                         '/guide/2048',
                         '/guide/soduku',
                         '/guide/snake',
