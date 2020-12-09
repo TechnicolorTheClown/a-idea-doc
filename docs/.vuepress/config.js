@@ -1,6 +1,6 @@
 module.exports = {
     // 插件
-    base: '/a-idea-doc/',
+    base: '/SimpleIdea/',
     plugins: {
         '@vuepress/back-to-top': {}
     },
@@ -10,7 +10,7 @@ module.exports = {
         ['link', { rel: 'icon', href: '/logo/small.png' }]
     ],
     theme: 'reco',
-    title: 'a-idea-doc',
+    title: 'SimpleIdea',
     description: '在一个崇高的目的支持下，不停地学习，即使慢、也一定会获得成功',
     // 主题配置
     themeConfig: {
@@ -28,52 +28,54 @@ module.exports = {
         // 项目开始时间，只填写年份
         startYear: '2020',
         nav: [
-            { text: '项目指南', link: '/guide/', icon: 'reco-document'},
-            { text: '常见问题', link: '/problem/', icon: 'reco-faq'},
+            { text: '博客文档', link: '/guide/', icon: 'reco-document'},
+            { text: '书签', link: '/problem/', icon: 'reco-faq'},
             { text: '更新日志', link: '/version/V0.1/', icon: 'reco-date'},
-            { text: '捐赠支持', link: '/donation/', icon: 'reco-account'},
-            { text: '体验地址', link: 'https://', icon: 'reco-other'},
-            // 下拉列表
-            {
-                text: '源码地址',
-                items: [
-                    {
-                        text: 'Github源码',
-                        link: 'https://github.com/TechnicolorTheClown/idea-doc'
-                    },
-                    {
-                        text: 'Gitee源码',
-                        link: '/guide/lottery'
-                    },
-                ],
-                icon: 'reco-github'
-            }
+            { text: '捐赠支持', link: '/donation/', icon: 'reco-account'}
+            // ,
+            // // 下拉列表
+            // {
+            //     text: '源码地址',
+            //     items: [
+            //         {
+            //             text: 'Github源码',
+            //             link: 'https://github.com/TechnicolorTheClown/idea-doc'
+            //         },
+            //         {
+            //             text: 'Gitee源码',
+            //             link: '/guide/lottery'
+            //         },
+            //     ],
+            //     icon: 'reco-github'
+            // }
         ],
         sidebar: {
             '/guide/': [
-                {
-                    title: 'a-idea-doc',
-                    collapsable: false,
-                    children: [
-                        '/guide/',
-                        '/guide/kslj',
-                        '/guide/ksks',
-                        '/guide/qdsc',
-                        '/guide/xmbs'
-                    ]
-                },
+                // {
+                //     title: 'SimpleIdea',
+                //     collapsable: false,
+                //     children: [
+                //         '/guide/',
+                //         '/guide/kslj',
+                //         '/guide/ksks',
+                //         '/guide/qdsc',
+                //         '/guide/xmbs'
+                //     ]
+                // },
                 {
                     title: 'JAVA',
                     collapsable: false,
                     children: [
-                        '/guide/JAVAREADME'
+                        '/guide/Java 基础'
                     ]
                 },
                 {
                     title: 'MySQL',
                     collapsable: false,
                     children: [
-                        '/guide/MySQLREADME'
+                        '/guide/MySQL简介',
+                        '/guide/一 数据定义',
+                        '/guide/二 SQL 基础语法'
                     ]
                 },
                 {
@@ -99,7 +101,7 @@ module.exports = {
                     title: '游戏',
                     collapsable: false,
                     children: [
-                        '/guide/gobang',
+                        // '/guide/gobang',
                         '/guide/2048',
                         '/guide/soduku',
                         '/guide/snake',
@@ -118,7 +120,8 @@ module.exports = {
                     title: '鸣谢',
                     collapsable: false,
                     children: [
-                        '/guide/mx'
+                        '/guide/mx',
+                        '/guide/api'
                     ]
                 }
             ],
@@ -126,7 +129,7 @@ module.exports = {
                 '/donation/',
             ],
             '/problem/': [
-                '/problem/',
+                '/problem/bookmarks'
             ],
             '/version/': [
                 {
