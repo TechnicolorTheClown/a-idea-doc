@@ -1,6 +1,6 @@
 module.exports = {
     // 插件
-    base: '/SimpleIdea/',
+    base: '/DriftwoodFindStar/',
     plugins: {
         '@vuepress/back-to-top': {}
     },
@@ -10,7 +10,7 @@ module.exports = {
         ['link', { rel: 'icon', href: '/logo/small.png' }]
     ],
     theme: 'reco',
-    title: 'SimpleIdea',
+    title: '浮木寻星',
     description: '在一个崇高的目的支持下，不停地学习，即使慢、也一定会获得成功',
     // 主题配置
     themeConfig: {
@@ -29,7 +29,7 @@ module.exports = {
         startYear: '2020',
         nav: [
             { text: '博客文档', link: '/guide/', icon: 'reco-document'},
-            { text: '书签', link: '/problem/', icon: 'reco-faq'},
+            // { text: '书签', link: '/problem/', icon: 'reco-faq'},
             { text: '更新日志', link: '/version/V0.1/', icon: 'reco-date'},
             { text: '捐赠支持', link: '/donation/', icon: 'reco-account'}
             // ,
@@ -66,16 +66,16 @@ module.exports = {
                     title: 'JAVA',
                     collapsable: false,
                     children: [
-                        '/guide/Java 基础'
+                        '/guide/JavaBasis'
                     ]
                 },
                 {
                     title: 'MySQL',
                     collapsable: false,
                     children: [
-                        '/guide/MySQL简介',
-                        '/guide/一 数据定义',
-                        '/guide/二 SQL 基础语法'
+                        '/guide/MySQLAbstract',
+                        '/guide/OneDataDefinition',
+                        '/guide/TwoSQLBasicGrammar'
                     ]
                 },
                 {
@@ -107,23 +107,25 @@ module.exports = {
                         '/guide/snake',
                         '/guide/mine'
                     ]
-                },
-                {
-                    title: '其它',
-                    collapsable: false,
-                    children: [
-                        '/guide/gxdm',
-                        '/guide/bqsm'
-                    ]
-                },
-                {
-                    title: '鸣谢',
-                    collapsable: false,
-                    children: [
-                        '/guide/mx',
-                        '/guide/api'
-                    ]
                 }
+                // ,
+                // {
+                //     title: '其它',
+                //     collapsable: false,
+                //     children: [
+                //         '/guide/gxdm',
+                //         '/guide/bqsm'
+                //     ]
+                // }
+                // ,
+                // {
+                //     title: '鸣谢',
+                //     collapsable: false,
+                //     children: [
+                //         '/guide/mx',
+                //         '/guide/api'
+                //     ]
+                // }
             ],
             '/donation/': [
                 '/donation/',
